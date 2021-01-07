@@ -1,0 +1,31 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+- task: katalonTask@0
+  displayName: 'Execute Katalon Studio project - 1st'
+  inputs:
+    version: '7.8.1'
+    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+    
+- task: katalonTask@0
+  displayName: 'Execute Katalon Studio project - 2nd'
+  inputs:
+    version: '7.8.1'
+    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+
+- task: katalonTask@0
+  displayName: 'Execute Katalon Studio project - 3rd'
+  inputs:
+    version: '7.8.1'
+    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+
+- task: katalonTask@0
+  displayName: 'Execute Katalon Studio project - 4th'
+  inputs:
+    version: '7.8.1'
+    executeArgs: '-retry=0 -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -browserType="Chrome" -apiKey=$(katalon_api_key)'
+    
